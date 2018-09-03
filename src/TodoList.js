@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import './style.css';
 
 export default class TodoList extends Component {
 
@@ -20,7 +21,10 @@ export default class TodoList extends Component {
     return (
       <Fragment>
        <div>
-        <input 
+        <label htmlFor="automatic">自动对焦</label>
+        <input
+          id="automatic"
+          className="input" 
           type="text" 
           value={this.state.inputValue} 
           onChange={this.handleInputChange}
