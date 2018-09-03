@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import './style.css';
+import TodoItem from './TodoItem.js';
 
 export default class TodoList extends Component {
 
@@ -51,11 +52,23 @@ export default class TodoList extends Component {
         <ul>
           {
             this.state.list.map((item,index) => {
-             return  <li 
-             key={index}
-             onClick={() => this.handleDetele(index)}
-             dangerouslySetInnerHTML={{__html: item}}
-             />
+             return (
+                <div key={index}>
+                  {/*组件拆分*/}
+                  <TodoItem 
+                    content={item} 
+                    index={index}
+                    deteleItem={this.handleDetele.bind(this)}
+                    dangerouslySetInnerHTML={{__html: item}}
+                  /> 
+                  {/*一个组件中执行*/}
+                  {/* <li 
+                   key={index}
+                   onClick={() => this.handleDetele(index)}
+                   dangerouslySetInnerHTML={{__html: item}}
+                   />*/}
+                </div>
+              )
             })
           }
         </ul>
