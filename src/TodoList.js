@@ -17,6 +17,23 @@ export default class TodoList extends Component {
     })
   };
 
+  handleBtnClick = (e) => {
+    let {list} = this.state;
+    list.unshift(this.state.inputValue);
+    this.setState({
+      list,
+      inputValue: ''
+    })
+  };
+
+  handleDetele = (index) => {
+     let {list} = this.state;
+     list.splice(index,1);
+     this.setState({
+      list
+     })
+  };
+
   render() {
     return (
       <Fragment>
@@ -29,11 +46,18 @@ export default class TodoList extends Component {
           value={this.state.inputValue} 
           onChange={this.handleInputChange}
         />
-        <button>提交</button>
+        <button onClick={this.handleBtnClick}>提交</button>
        </div>
         <ul>
-          <li>学英语</li>
-          <li>学英语</li>
+          {
+            this.state.list.map((item,index) => {
+             return  <li 
+             key={index}
+             onClick={() => this.handleDetele(index)}
+             dangerouslySetInnerHTML={{__html: item}}
+             />
+            })
+          }
         </ul>
       </Fragment>
     );
