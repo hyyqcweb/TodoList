@@ -9,14 +9,16 @@ export default class TodoItem extends Component {
 	}
 
 	handleClick = () => {
-		this.props.deteleItem(this.props.index)
+		const {deteleItem,index} = this.props;
+		deteleItem(index)
 	}
 
 	render() {
+		const {content} = this.props;
 		return (
 			<div 
-			onClick={this.handleClick}
-			dangerouslySetInnerHTML={{__html: this.props.content}}
+				onClick={this.handleClick}
+				dangerouslySetInnerHTML={{__html: content}}
 			/>
 		)
 	}
