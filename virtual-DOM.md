@@ -25,10 +25,12 @@
 虚拟DOM
 1. state 数据
 2. JSX 模板
-3. 数据 + 模板 结合, 生成 真实的DOM,并显示
-<div id="abc"><span>hello world</span></div>
-4. 生成虚拟DOM (虚拟DOM就是一个JS对象,用它来描述真实DOM) (损耗了性能,很小)
+3. 数据+ 模板 生成虚拟DOM (虚拟DOM就是一个JS对象,用它来描述真实DOM) (损耗了性能,很小)
 ['div',{id:'abc'},['span',{},'hello world']]
+
+4. 用虚拟DOM的结构 生成 真实的DOM,并显示
+<div id="abc"><span>hello world</span></div>
+
 5. state 发生变化
 6. 数据 + 模板 生成新的虚拟DOM (极大的提升了性能)
 ['div',{id:'abc'},['span',{},'bye']]
