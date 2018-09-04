@@ -7,6 +7,7 @@
 + react 视图层框架
 + react 数据层 => redux,mobx
 + react 函数式编程,从而引出了 "面向测试" 的概念
++ propTypes:校验 defaultProps:定义默认值
 
 - dangerouslySetInnerHTML
 ```js
