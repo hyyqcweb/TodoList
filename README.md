@@ -8,6 +8,7 @@
 + react 数据层 => redux,mobx
 + react 函数式编程,从而引出了 "面向测试" 的概念
 + propTypes:校验 defaultProps:定义默认值
++ props,state,render三者的关系: 当一个组件的props 或者state 发生改变的时候,它的render函数都将会被重新执行
 
 - dangerouslySetInnerHTML
 ```js
