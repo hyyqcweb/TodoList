@@ -98,7 +98,9 @@ export default class TodoList extends Component {
         />
         <button onClick={this.handleBtnClick}>提交</button>
        </div>
-        {this.getTodoItem()}
+       <ul>
+          {this.getTodoItem()}
+       </ul>
       </Fragment>
     );
   }

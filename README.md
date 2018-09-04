@@ -3,6 +3,9 @@
 + 更规范,更优雅的react代码
 + get点:**dangerouslySetInnerHTML(html代码->html),最新setState写法,父子之间传值,this绑定的三种形式,jsx中逻辑臃肿(代码提取)**
 + react : 声明式开发  jquery : 命令式开发
++ react父子组件通信: 父传子值,通过属性传值,子通过props接收值,子传父值,父传方法给子,子接收并调用父的方法,并传值,从而在父组件里接收值
++ react 视图层框架
++ react 数据层 => redux,mobx
 
 - dangerouslySetInnerHTML
 ```js
