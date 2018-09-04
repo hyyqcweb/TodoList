@@ -24,7 +24,9 @@
 
 虚拟DOM
 1. state 数据
-2. JSX 模板
+
+2. JSX 模板 (JSX -> createElement -> 虚拟DOM(js 对象) -> 真实DOM)
+
 3. 数据+ 模板 生成虚拟DOM (虚拟DOM就是一个JS对象,用它来描述真实DOM) (损耗了性能,很小)
 ['div',{id:'abc'},['span',{},'hello world']]
 
@@ -32,9 +34,28 @@
 <div id="abc"><span>hello world</span></div>
 
 5. state 发生变化
+
 6. 数据 + 模板 生成新的虚拟DOM (极大的提升了性能)
 ['div',{id:'abc'},['span',{},'bye']]
+
 7. 比较原始虚拟DOM和新的虚拟DOM的区别,找到区别是span中的内容 (极大的提升了性能)
-8.直接操作DOM,改变span中的内容
+
+8. 直接操作DOM,改变span中的内容
 
 虚拟DOM: 本质就是一个JS对象,之所以能够提升性能,是因为JS里面去比较JS对象不怎么耗性能,但比较真实的DOM很耗性能
+
+虚拟DOM底层render 实现: 
+```js
+	render() {
+		return React.createElement('div',{id:"abc"},'item'); // 一个对象,相当我们写
+		return <div id="abc"></div>
+
+		// 如果想实现多层嵌套 如: <div><span>hello</span></div>
+		return React.createElement('div',{},React.createElement('span',{},'hello'))  
+		// 无疑是很麻烦的,所以推出了JSX模板语法
+	}
+```
+
+虚拟DOM 好处: 
+1. 性能提升了
+2. 它使得跨端应用得以实现. React Native(得益于 虚拟DOM)(把虚拟DOM 转化给 原生的组件,可以实现代码复用)
