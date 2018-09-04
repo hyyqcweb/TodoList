@@ -26,7 +26,7 @@ export default class TodoItem extends Component {
 }
 
 TodoItem.propTypes = {
-    content: PropTypes.arrayOf(PropTypes.number, PropTypes.string, PropTypes.array), // 既可以是数字又可以string
+    content: PropTypes.arrayOf(PropTypes.number, PropTypes.string), // 既可以是数字又可以string
     deteleItem: PropTypes.func,
     index: PropTypes.number
 }
