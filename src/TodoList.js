@@ -74,21 +74,12 @@ export default class TodoList extends Component {
   getTodoItem() {
     return this.state.list.map((item,index) => {
              return (
-                <div key={index}>
-                  {/*组件拆分*/}
                   <TodoItem 
                     content={item} 
                     index={index}
-                    deteleItem={this.handleDetele} 
-                    dangerouslySetInnerHTML={{__html: item}}
-                  /> 
-                  {/*一个组件中执行*/}
-                  {/* <li 
-                   key={index}
-                   onClick={() => this.handleDetele(index)}
-                   dangerouslySetInnerHTML={{__html: item}}
-                   />*/}
-                </div>
+                    key={index}
+                    deteleItem={this.handleDetele}
+                  />
               )
     })
   }
@@ -107,10 +98,24 @@ export default class TodoList extends Component {
         />
         <button onClick={this.handleBtnClick}>提交</button>
        </div>
-        <ul>
-          {this.getTodoItem()}
-        </ul>
+        {this.getTodoItem()}
       </Fragment>
     );
   }
 }
+
+{/*组件拆分*/}
+{/*
+  <TodoItem 
+    content={item} 
+    index={index}
+    deteleItem={this.handleDetele}
+  /> 
+*/}                  
+
+{/*一个组件中执行*/}
+{/* <li 
+ key={index}
+ onClick={() => this.handleDetele(index)}
+ dangerouslySetInnerHTML={{__html: item}}
+ />*/}

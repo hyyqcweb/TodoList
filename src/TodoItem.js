@@ -3,9 +3,7 @@ import React,{Component} from 'react';
 export default class TodoItem extends Component {
 	constructor() {
 		super();
-		this.state = {
-
-		}
+		this.state = {}
 	}
 
 	handleClick = () => {
@@ -16,10 +14,10 @@ export default class TodoItem extends Component {
 	render() {
 		const {content} = this.props;
 		return (
-			<div 
-				onClick={this.handleClick}
-				dangerouslySetInnerHTML={{__html: content}}
-			/>
+				<li
+					onClick={this.handleClick}
+					dangerouslySetInnerHTML={{__html: content}}
+				/>
 		)
 	}
 }
