@@ -6,6 +6,7 @@
 + react父子组件通信: 父传子值,通过属性传值,子通过props接收值,子传父值,父传方法给子,子接收并调用父的方法,并传值,从而在父组件里接收值
 + react 视图层框架
 + react 数据层 => redux,mobx
++ react 函数式编程,从而引出了 "面向测试" 的概念
 
 - dangerouslySetInnerHTML
 ```js
