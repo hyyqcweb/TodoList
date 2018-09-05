@@ -1,4 +1,4 @@
-## TodoList
+## TodoList (react 基础笔记)
 
 + 优雅的react代码
 + get点:**dangerouslySetInnerHTML(html代码->html),最新setState写法,父子之间传值,this绑定的三种形式,jsx中逻辑臃肿(代码提取)**
