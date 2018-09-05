@@ -19,6 +19,9 @@ react 提升性能几个点
 3. constructor里面 绑定 函数的 作用域
 4. 虚拟DOM 同层比对,key值绑定 提升比对速度
 
+
++ css 动画
+
 - dangerouslySetInnerHTML
 ```js
   render() {
