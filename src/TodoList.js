@@ -18,7 +18,13 @@ export default class TodoList extends Component {
 
   handleInputChange = (e) => {
     // 另一种写法
-    const value = e.target.value
+    // const value = e.target.value
+    // this.setState(() => ({
+    //   inputValue:value
+    // }))
+    
+    // ref 写法 不推荐!!!
+    const value = this.input.value;
     this.setState(() => ({
       inputValue:value
     }))
@@ -46,9 +52,16 @@ export default class TodoList extends Component {
     
     // 新版写法
     this.setState((prevState) => ({
-      list:[prevState.list,prevState.inputValue],
+      list:[...prevState.list,prevState.inputValue],
       inputValue:''
-    }))
+    }),() => {
+      console.log(this.ul.querySelectorAll('div').length)
+      // 当setState执行完后在执行,就没有问题啦,尽量不要使用
+    })
+    // console.log(this.ul.querySelectorAll('div').length)
+    // 正常console打印应该是 1,2,3...
+    // 为什么获取DOM节点都是  0,1,2... ,因为setState是一个异步函数,所以console.log
+    // 会在setState之前调用,所以会出现这样的问题
   };
 
   handleDetele = (index) => {
@@ -98,10 +111,11 @@ export default class TodoList extends Component {
           type="text" 
           value={this.state.inputValue} 
           onChange={this.handleInputChange}
+          ref={(input) => {this.input = input}}
         />
         <button onClick={this.handleBtnClick}>提交</button>
        </div>
-       <ul>
+       <ul ref={(ul) => {this.ul = ul}}>
           {this.getTodoItem()}
        </ul>
        <Test content={this.state.inputValue}/>

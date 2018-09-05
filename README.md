@@ -10,6 +10,7 @@
 + propTypes:校验 defaultProps:定义默认值
 + props,state,render三者的关系: 当一个组件的props 或者state 发生改变的时候,它的render函数都将会被重新执行
 + 虚拟DOM: 本质上是一个JS对象,在JS中比较JS对象是不怎么耗性能的,但是比较真实DOM是非常耗性能的
++ ref: ref不推荐使用
 
 - dangerouslySetInnerHTML
 ```js
@@ -146,3 +147,4 @@ setState(异步操作,为了提高react底层的性能)
 连续调用三次setState,调用的时间间隔时间非常少,react把三次合成一次,节省了性能
 
 Diff(diffrence)算法: 同层比对(同级比较),因为算法简单,比对速度大大提升,大大提高了性能,不过也是有大量的DOM渲染浪费,造成性能损耗,总体来说 性能还是大大提升的
+
