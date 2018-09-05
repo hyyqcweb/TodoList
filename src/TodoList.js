@@ -15,6 +15,36 @@ export default class TodoList extends Component {
     }
     this.handleDetele = this.handleDetele.bind(this);
   }
+  // 组件在挂载到页面之前,调用
+  componentWillMount() {
+    console.log('componentWillMount')
+  }
+  // 组件在挂载到页面之后,调用
+  componentDidMount() {
+    console.log('componentDidMount')
+  }
+  // 组件被更新之前,它会被自动执行
+  shouldComponentUpdate() {
+    console.log('shouldComponentUpdate')
+    return true;
+  }
+  // 组件被更新之前,它会被自动执行,如果shouldComponentUpdate
+  // 返回true,它才执行,如果返回false,它就不会被执行了
+  componentWillUpdate() {
+    console.log('componentWillUpdate')
+  }
+  // 组件更新完成之后,它会被执行
+  componentDidUpdate() {
+    console.log('componentDidUpdate')
+  }
+  // 当一个组件从父组件接受了参数
+  // 只要父组件的render函数被重新执行了,子组件的这个生命周期函数就会被执行了
+  // 如果这个组件第一次存在于父组件中,不会执行
+  // 如果这个组件之前已经存在于父组件中,才会执行
+  componentWillReceiveProps() {
+    console.log('componentWillReceiveProps')
+  }
+
 
   handleInputChange = (e) => {
     // 另一种写法
@@ -101,6 +131,7 @@ export default class TodoList extends Component {
   }
 
   render() {
+    console.log('parent render');
     return (
       <Fragment>
        <div>
