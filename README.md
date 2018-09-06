@@ -12,6 +12,7 @@
 + 虚拟DOM: 本质上是一个JS对象,在JS中比较JS对象是不怎么耗性能的,但是比较真实DOM是非常耗性能的
 + ref: ref不推荐使用
 + 生命周期函数(lifecycle)
++ Redux = Reducer + Flux
 
 react 提升性能几个点
 1. shouldComponentUpdate 提高react组件的性能,避免不必要的render渲染
