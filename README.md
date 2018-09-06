@@ -136,15 +136,18 @@ Store几大步骤
 2. JSX 模板 (JSX -> createElement -> 虚拟DOM(js 对象) -> 真实DOM)
 
 3. 数据+ 模板 生成虚拟DOM (虚拟DOM就是一个JS对象,用它来描述真实DOM) (损耗了性能,很小)
-['div',{id:'abc'},['span',{},'hello world']]
+
+```['div',{id:'abc'},['span',{},'hello world']]```
 
 4. 用虚拟DOM的结构 生成 真实的DOM,并显示
-<div id="abc"><span>hello world</span></div>
+
+```<div id="abc"><span>hello world</span></div>```
 
 5. state 发生变化
 
 6. 数据 + 模板 生成新的虚拟DOM (极大的提升了性能)
-['div',{id:'abc'},['span',{},'bye']]
+
+```['div',{id:'abc'},['span',{},'bye']]```
 
 7. 比较原始虚拟DOM和新的虚拟DOM的区别,找到区别是span中的内容 (极大的提升了性能)
 
