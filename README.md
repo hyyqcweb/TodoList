@@ -29,6 +29,12 @@ Store三大原则
 2. 只有store才能改变自己的内容
 3. reducer必须是纯函数
 
+Store几大步骤
+1. createStore 创建Store
+2. store.dispatch 派发action给store
+3. store.getState 接收store的数据
+4. store.subscribe 动态的接收store值(执行函数)
+
 纯函数(木偶组件): 给定固定的输入,就会有固定的输出,不会产生任何副作用
 
 - dangerouslySetInnerHTML
