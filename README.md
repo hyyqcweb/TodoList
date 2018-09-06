@@ -24,6 +24,13 @@ react 提升性能几个点
 
 + css 动画
 
+Store三大原则
+1. store必须唯一
+2. 只有store才能改变自己的内容
+3. reducer必须是纯函数
+
+纯函数(木偶组件): 给定固定的输入,就会有固定的输出,不会产生任何副作用
+
 - dangerouslySetInnerHTML
 ```js
   render() {
