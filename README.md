@@ -13,6 +13,7 @@
 + ref: ref不推荐使用
 + 生命周期函数(lifecycle)
 + Redux = Reducer + Flux
+![image](http://thyrsi.com/t6/367/1536201665x-1404750082.jpg)
 
 react 提升性能几个点
 1. shouldComponentUpdate 提高react组件的性能,避免不必要的render渲染
