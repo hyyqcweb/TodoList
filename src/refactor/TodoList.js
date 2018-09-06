@@ -24,7 +24,7 @@ export default class TodoList extends Component {
 	            value={this.state.inputValue}
 	            onChange= {this.handleInputChange}
 	            />
-				<Button type="primary" onClick={this.handleBtnClick}>提交</Button>
+				<Button type="primary" disabled={!this.state.inputValue} onClick={this.handleBtnClick}>提交</Button>
 				<List
 		            style={{
 		                marginTop: 10,
@@ -54,7 +54,7 @@ export default class TodoList extends Component {
     	this.setState(store.getState())
     }
     handleBtnClick() {
-    	const action = {
+		const action = {
     		type: 'add_todo_item'
     	}
     	store.dispatch(action);
