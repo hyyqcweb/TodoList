@@ -12,6 +12,7 @@
 + 虚拟DOM: 本质上是一个JS对象,在JS中比较JS对象是不怎么耗性能的,但是比较真实DOM是非常耗性能的
 + ref: ref不推荐使用
 + UI组件(傻瓜组件)和容器组件(聪明组件)
++ 无状态组件(**无constructor,state,lifecycle**)和有状态组件(**一应俱全**)
 + 生命周期函数(lifecycle)
 + Redux = Reducer + Flux
 ![image](http://thyrsi.com/t6/367/1536201665x-1404750082.jpg)
