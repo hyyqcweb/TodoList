@@ -5,9 +5,10 @@ import {
 		getInputChangeAction,
 		getAddItemAction, 
 		getRemoveItemAction,
-		getTodoList
+		getInitList
 	} from './store/actionCreators'
 import TodoListUI from './TodoListUI';
+
 // 容器组件
 export default class TodoList extends Component {
 	constructor (props) {
@@ -21,8 +22,21 @@ export default class TodoList extends Component {
 	}
 
 	componentDidMount() {
-		// componentDidMount 不要直接写axios请求,最好使用 redux-thunk 来管理
-		const action = getTodoList();
+		// thunk
+		// // componentDidMount 不要直接写axios请求,最好使用 redux-thunk 来管理
+		// const action = getTodoList();
+		// store.dispatch(action);
+		
+		// 没有中间件
+		// axios.get('/list.json').then(res => {
+		// 	const action = initListAction(res.data);
+		// 	store.dispatch(action)
+		// }).catch(error => {
+		// 	console.log(error);
+		// })
+		
+		// saga 中间件
+		const action = getInitList();
 		store.dispatch(action);
 	}
 
