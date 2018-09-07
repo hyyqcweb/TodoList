@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import 'antd/dist/antd.css';
 import store from './store';
-import { getInputChangeAction, getAddItemAction, getRemoveItemAction,initListAction} from './store/actionCreators'
+import { 
+		getInputChangeAction,
+		getAddItemAction, 
+		getRemoveItemAction,
+		getTodoList
+	} from './store/actionCreators'
 import TodoListUI from './TodoListUI';
-import axios from 'axios';
 // 容器组件
 export default class TodoList extends Component {
 	constructor (props) {
@@ -17,12 +21,8 @@ export default class TodoList extends Component {
 	}
 
 	componentDidMount() {
-		axios.get('/list.json').then(res => {
-			const action = initListAction(res.data);
-			store.dispatch(action)
-		}).catch(error => {
-			console.log(error);
-		})
+		const action = getTodoList();
+		store.dispatch(action);
 	}
 
     render() {
