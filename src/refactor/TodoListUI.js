@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Input, Button, List} from 'antd';
 // TodoList UI 组件
-export default class TodoListUl extends Component {
+export default class TodoListUI extends Component {
 	render() {
 		const {inputValue, handleInputChange,handleBtnClick,handleItemDelete,list} = this.props;
 		return (

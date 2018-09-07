@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'antd/dist/antd.css';
 import store from './store';
 import { getInputChangeAction, getAddItemAction, getRemoveItemAction } from './store/actionCreators'
-import TodoListUI from './TodoListUl'
+import TodoListUI from './TodoListUI'
 // 容器组件
 export default class TodoList extends Component {
 	constructor (props) {
