@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Input, Button, List} from 'antd';
 
 // 无状态组件
@@ -37,7 +37,7 @@ export default TodoListUI
 
 
 // TodoList UI 组件 有状态组件
-// export default class TodoListUI extends Component {
+// export default class TodoListUI extends React.Component {
 // 	render() {
 // 		const {inputValue, handleInputChange,handleBtnClick,handleItemDelete,list} = this.props;
 // 		return (
