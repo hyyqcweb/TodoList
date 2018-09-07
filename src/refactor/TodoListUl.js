@@ -3,6 +3,7 @@ import { Input, Button, List} from 'antd';
 // TodoList UI 组件
 export default class TodoListUl extends Component {
 	render() {
+		const {inputValue, handleInputChange,handleBtnClick,handleItemDelete,list} = this.props;
 		return (
 			<div style={{
                 margin: '5% 0 0 5%'
@@ -11,20 +12,20 @@ export default class TodoListUl extends Component {
 	                width: 300,
 	                marginRight: 10
 	            }}
-	            value={this.props.inputValue}
-	            onChange= {this.props.handleInputChange}
+	            value={inputValue}
+	            onChange= {handleInputChange}
 	            />
-				<Button type="primary" disabled={!this.props.inputValue} onClick={this.props.handleBtnClick}>提交</Button>
+				<Button type="primary" disabled={!inputValue} onClick={handleBtnClick}>提交</Button>
 				<List
 		            style={{
 		                marginTop: 10,
 		                width: 300
 		            }}
 		            bordered
-		            dataSource={this.props.list}
+		            dataSource={list}
 		            renderItem={(item,index) => (
 		            	<List.Item 
-		            		onClick={(index) => {this.props.handleItemDelete(index)}}
+		            		onClick={(index) => {handleItemDelete(index)}}
 		            	>
 		            		{item}
 		            	</List.Item>
