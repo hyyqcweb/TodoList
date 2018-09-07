@@ -21,6 +21,7 @@ export default class TodoList extends Component {
 	}
 
 	componentDidMount() {
+		// componentDidMount 不要直接写axios请求,最好使用 redux-thunk 来管理
 		const action = getTodoList();
 		store.dispatch(action);
 	}
