@@ -39,6 +39,9 @@ Store几大步骤
 3. store.getState 接收store的数据
 4. store.subscribe 动态的接收store值(执行函数)
 
+Redux 中间件(action -(中间件)- store)
+store的dispatch方法做一个升级(redux-thunk)
+
 纯函数(木偶组件): 给定固定的输入,就会有固定的输出,不会产生任何副作用
 
 - dangerouslySetInnerHTML
